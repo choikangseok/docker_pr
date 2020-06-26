@@ -82,8 +82,80 @@ docker push 이미지명
 
 
 # Docker build
+* Docker build Example : https://github.com/Finfra/dockers.git
+
 
 # Kubernetes
+## Short-names 
+| Short name    |Full name                  |
+|---------------|---------------------------|
+| po            |pods                       |
+| rs            |replicasets                |
+| svc           |services                   |
+| ns            |namespaces                 |
+| no            |nodes                      |
+| ep            |endpoints                  |
+| ds            |daemonsets                 |
+| deploy        |deployments                |
+| -             | -                         |
+| rc            |replicationcontrollers     |
+| hpa           |horizontal pod autoscalers |
+| cs            |componentstatuses          |
+| limits        |limitranges                |
+| cm            |configmaps                 |
+| csr           |certificatesigningrequests |
+| ev            |events                     |
+| ing           |ingresses                  |
+| pdb           |poddisruptionbudgets       |
+| psp           |podsecuritypolicies        |
+| pv            |persistentvolumes          |
+| pvc           |persistentvolumeclaims     |
+| quota         |resourcequotas             |
+| sa            |serviceaccounts            |
+
+## 기본명령어
+```
+kubectl cluster-info
+kubectl version
+kubectl get nodes       
+
+kubectl get services
+kubectl get deployments
+kubectl get pods
+
+kubectl run <deploy명> --image=<이미지명> --port=80
+kubectl get deployments
+kubectl logs <pod명>
+kubectl.exe exec -it <pod명> bash
+
+kubectl get services
+kubectl expose deployment/<deploy명> --type="NodePort" --port 80
+kubectl describe services/<deploy명>
+
+kubectl scale deployment <deploy명> --replicas=4
+
+kubectl.exe label pod nginx-5578584966-clbsr xxx=333
+kubectl get pods -l xxx=333
+
+kubectl create -f d.yaml
+kubectl.exe label pod nginx-5578584966-clbsr xxx=333
+kubectl get pods -l xxx=333
+
+kubectl delete services/nginx
+kubectl autoscale rs nginx-5578584966 --max=20
+kubectl.exe get hpa
+kubectl describe hpa/nginx-5578584966
+
+kubectl.exe get deploy nginx -o yaml > nginx.yaml
+kubectl create -f nginx.yaml
+
+```
+
+
+
+
+
+
 
 # Basic Tech
 ## git
@@ -98,6 +170,7 @@ git config --global core.eol lf
 git config --global user.email "nowage@gmail.com"
 git config --global user.name "Nam JungGu"
 ```
+
 
 
 
@@ -139,6 +212,19 @@ done
 1. Ubuntu 이미지 기반으로 u1이라는 컨테이너를 만드시오.
 2. u1 컨테이너에 nginx를 설치하시오.
 3. u1 컨테이너를 유저명/nginx1 이미지로 만들고 docker hub에 push하시오.
+
+## Day2
+1. Docker Image Build 하시오. (단, Nginx를 설치해서, Ubuntu이미지에서)
+
+3. Docker Build Script를 Github에 Push하시오.(최소한의 Usage를 README.md에 넣으시오. )
+                                               ex) docker build -t nowage/nginx-test  .
+2. Docker hub로 Push하시오. (최소한의 Description을 넣으시오.즉, 생성스크립트의 github 주소 )
+
+
+
+
+
+
 
 
 

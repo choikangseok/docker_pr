@@ -1,0 +1,25 @@
+# 실습평가 문제
+## 문제1. github에 docker build Script를 Push하고 Repository주소를 제출 하시오.
+- Nginx 이미지 빌드(nginx로 하지 말고, ubuntu에 설치해서)
+- cf) apt install docker.io
+1. github Repository 만들기
+2. clone
+3. build script 만들기
+4. test(build도 해보고, run해보고,nginx서버가 잘 작동하는지 확인할 것)
+5. 간단한 설명, 사용예와 그 결과를 README.md에 넣으시오.
+6. add,commit,push
+
+## 문제 2. dockerhub에 docker image를 Push하고 Repository 주소를 제출 하시오.
+- Nginx 도커 이미지 Push
+1. 문제1번으로 만들어진 이미지 push
+2. dockerhub Repository에 README를 Update
+    * 단, Build스크립트의 github Repository를 명시할 것.
+
+## 문제 3. Kubernetes로 Container Deploy할 것.
+- Kubernete Deploy
+1. 이미지는 문제2번으로 만든 이미지 사용.
+2. Pod는 20개 사용
+3. Service port는 80번
+4. Deploy스크립트는 문제1번의 결과 레포지터리에 k8s라는 폴더 만들어서 k8s.sh라는 명칭으로 저장하시오.
+5. 간단한 설명, 사용예와 그 결과를 문제1번의 결과 레포지터리에 k8s라는 폴더 만들어서 README.md라는 명칭으로 저장하시오.
+6. add,commit,push

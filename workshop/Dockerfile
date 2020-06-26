@@ -1,5 +1,10 @@
 FROM ubuntu
-RUN apt update
-RUN apt install -y vim
-RUN apt install -y tree
+MAINTAINER choiks test@test.com
+
+RUN apt update -y
 RUN apt install -y nginx
+
+CMD ['nginx']
+
+EXPOSE 80
+EXPOSE 443
